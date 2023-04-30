@@ -35,8 +35,6 @@ python train_mi_macro.py
   booktitle={2021 IEEE International Conference on Web Services (ICWS)}, 
   title={Multiple Features Driven Author Name Disambiguation}, 
   year={2021},
-  volume={},
-  number={},
   pages={506-515},
   doi={10.1109/ICWS53863.2021.00071}}
 

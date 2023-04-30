@@ -11,8 +11,8 @@ Citing https://github.com/timxiao317/E2E-Name-Disambiguation.
 ## Datasets
 The datasets used in this study are available from the following websites:
 ```
-1) Aminer_data: https://static.aminer.cn/misc/na-data-kdd18.zip
-2) WhoIswho_data: https://www.aminer.cn/billboard/whoiswho
+1) Aminer_data: "https://static.aminer.cn/misc/na-data-kdd18.zip"
+2) WhoIswho_data: "https://www.aminer.cn/billboard/whoiswho" or "https://github.com/timxiao317/E2E-Name-Disambiguation"
 ```
 
 ## Main packages

@@ -11,9 +11,11 @@ torch < 1.8
 python <= 3.7.5  
 
 # Usage
+```python
 python Create_Graph.py  
 python make_walk.py  
 python train_mi_macro.py  
+```
 
 # Citation
 ```bibtex

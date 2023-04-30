@@ -10,9 +10,9 @@ torch < 1.8
 python <= 3.7.5
 
 # Usage
-python Create_Graph.py
-python make_walk.py
-python train_mi_macro.py
+python Create_Graph.py \\
+python make_walk.py \\
+python train_mi_macro.py \\
 
 # Citation
 @INPROCEEDINGS{9590332,

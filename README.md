@@ -1,6 +1,5 @@
 
-![image](https://user-images.githubusercontent.com/37830460/235340743-a6ded647-46da-4334-9d1b-fbf0c1f84fdb.png)
-
+![image](https://user-images.githubusercontent.com/37830460/235340773-b79a7917-892b-4374-af75-06404dfc3b8b.png)
 
 Citing https://github.com/timxiao317/E2E-Name-Disambiguation
 

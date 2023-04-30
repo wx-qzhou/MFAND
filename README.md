@@ -1,11 +1,12 @@
 # Illustration
 ![image](https://user-images.githubusercontent.com/37830460/235340773-b79a7917-892b-4374-af75-06404dfc3b8b.png)
 
-Citing https://github.com/timxiao317/E2E-Name-Disambiguation.  
-  
+
 Implementation of the study proposed in the paper <a href="https://ieeexplore.ieee.org/document/9590332">Multiple Features Driven Author Name Disambiguation</a>
   
 We have shared all the code related to this research, and those who are interested in using it may refer to the dataset demo we have provided. By processing the relevant data like the demo, the code can be executed successfully. 
+
+Citing https://github.com/timxiao317/E2E-Name-Disambiguation.  
 
 # Datasets
 The datasets used in this study are available from the following websites:

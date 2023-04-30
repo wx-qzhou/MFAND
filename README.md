@@ -5,7 +5,7 @@ Citing https://github.com/timxiao317/E2E-Name-Disambiguation.
 We have share all codes about this study. If someone wants to 
 
 # Install
-
+pip install networkx
 
 
 

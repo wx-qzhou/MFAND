@@ -6,7 +6,10 @@ We have shared all the code related to this research, and those who are interest
 
 # Datasets
 The datasets used in this study are available from the following websites:
-
+```
+1) Aminer_data: https://static.aminer.cn/misc/na-data-kdd18.zip
+2) WhoIswho_data: https://www.aminer.cn/billboard/whoiswho
+```
 
 # Main packages
 networkx < 2.0  
@@ -14,6 +17,7 @@ torch < 1.8
 python <= 3.7.5  
 
 # Usage
+
 ```python
 python Create_Graph.py  
 python make_walk.py  

@@ -16,9 +16,9 @@ python make_walk.py
 python train_mi_macro.py  
 
 # Citation
-@INPROCEEDINGS{9590332,
-  author={Zhou, Qian and Chen, Wei and Wang, Weiqing and Xu, Jiajie and Zhao, Lei},
-  booktitle={2021 IEEE International Conference on Web Services (ICWS)}, 
+@INPROCEEDINGS{9590332,  
+author={Zhou, Qian and Chen, Wei and Wang, Weiqing and Xu, Jiajie and Zhao, Lei},  
+booktitle={2021 IEEE International Conference on Web Services (ICWS)},
   title={Multiple Features Driven Author Name Disambiguation}, 
   year={2021},
   volume={},

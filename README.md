@@ -16,12 +16,15 @@ python make_walk.py
 python train_mi_macro.py  
 
 # Citation
-@INPROCEEDINGS{9590332,  
-author={Zhou, Qian and Chen, Wei and Wang, Weiqing and Xu, Jiajie and Zhao, Lei},  
-booktitle={2021 IEEE International Conference on Web Services (ICWS)},
+```bibtex
+@INPROCEEDINGS{9590332,
+  author={Zhou, Qian and Chen, Wei and Wang, Weiqing and Xu, Jiajie and Zhao, Lei},
+  booktitle={2021 IEEE International Conference on Web Services (ICWS)}, 
   title={Multiple Features Driven Author Name Disambiguation}, 
   year={2021},
   volume={},
   number={},
   pages={506-515},
   doi={10.1109/ICWS53863.2021.00071}}
+
+```

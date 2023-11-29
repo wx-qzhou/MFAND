@@ -23,6 +23,7 @@ python <= 3.7.5
 ## Usage
 
 ```python
+python Feature_idf.py
 python Create_Graph.py  
 python make_walk.py  
 python train_mi_macro.py  

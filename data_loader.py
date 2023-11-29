@@ -6,7 +6,7 @@ from utils import path_utils, train_utils
 
 
 class Dataset(data.Dataset):
-    def __init__(self, name_list, walk_id=None, need_sample=False):
+    def __init__(self, name_list, walk_id=0, need_sample=False):
         self.name_list = name_list
         self.need_sample = need_sample
         if walk_id is None:

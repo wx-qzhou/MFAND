@@ -43,10 +43,10 @@ def normalize(mx):
 
 def process_loaded_data(data, max_size, walk_id=None):
     node_feature_list, dense_raw_adj_list, edge_label, case_name = data
-    node_feature_list = node_feature_list.squeeze(0)
-    N = node_feature_list.shape[1]
+    N = edge_label.shape[1]
+
     if walk_id is None:
-        pass
+        node_feature_list = torch.Tensor(node_feature_list).view(1, N, -1)
     else:
         node_feature_list = torch.load('{}/{}_{}'.format(path_utils.node_data_path, case_name[0], str(walk_id)))
         node_feature_list = torch.Tensor(node_feature_list).view(1, N, -1)

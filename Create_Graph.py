@@ -67,16 +67,11 @@ def extract_negative_pub_pair(annotation_result):
     return negative_pair_list
 
 def save_gnn_data(
-        node_feature_list,
         adj_list,
         edge_label,
         allfeature,
         file_name,
 ):
-    torch.save(
-        torch.Tensor(node_feature_list),
-        '{}/{}'.format(path_utils.node_data_path, file_name)
-    )
     torch.save(
         adj_list,
         '{}/{}'.format(path_utils.adj_data_path, file_name)
@@ -97,83 +92,6 @@ def store_graph(file, edge_list):
             f.write(' ')
             f.write(str(edge[1]))
             f.write('\n')
-
-# class Create_Path(object): 
-    # def __init__(self, case_name): 
-        # self.G = nx.read_edgelist(os.path.join(path_utils.edge_data_path + '/' + case_name + '.txt'), create_using = nx.Graph()) # edges的文件的路径
-        # self.walk_len = node_feature_size
-        # self.return_prob = 0
-
-    # def generate_random_walks(self, rand=random.Random(0)):
-        # """generate random walks
-        # """
-        # walks = list()
-        # for node in list(self.G.nodes()):
-            # walks.append(self.random_walk(rand=rand, start=node))
-        # return walks
-  
-    # def random_walk(self, rand=random.Random(), start=None):
-        # """ Returns a truncated random walk.
-            # alpha: probability of restarts.
-            # start: the start node of the random walk.
-        # """
-        # if start is None:
-            # print("random walk need a start node!")
-        # path = [start]
-
-        # cur_path_length = self.walk_len
-        # while len(path) < cur_path_length:
-            # cur = path[-1]
-            # if len(list(self.G.neighbors(cur))) > 0:
-                # if rand.random() >= self.return_prob:
-                    # path.append(rand.choice(list(self.G.neighbors(cur))))
-                # else:
-                    # path.append(path[0])
-            # else:
-                # break
-        # return [str(node) for node in path]
-
-class Create_Path(object): 
-    def __init__(self, case_name): 
-        self.G = nx.read_edgelist(os.path.join(path_utils.edge_data_path + '/' + case_name + '.txt'), create_using = nx.Graph()) # edges的文件的路径
-        self.walk_len = node_feature_size
-        self.return_prob = 0
-        
-    def generate_random_walks(self, rand=random.Random(0)):
-        """generate random walks
-        """
-        walks = list()
-        node_id = 0
-        for node in list(self.G.nodes()):
-            walk_ = self.random_walk(rand=rand, start=node, node_id=node_id)
-            walk_add_len = self.walk_len - len(walk_)
-            if walk_add_len != 0:
-                walk_ += [node_id] * walk_add_len
-            walks.append(walk_)
-            node_id += 1
-        return walks
-        
-    def random_walk(self, node_id, rand=random.Random(), start=None):
-        """ Returns a truncated random walk.
-            alpha: probability of restarts.
-            start: the start node of the random walk.
-        """
-        if start is None:
-            print("random walk need a start node!")
-        path = [start]
-
-        cur_path_length = self.walk_len
-        while len(path) < cur_path_length:
-            cur = path[-1]
-            if len(list(self.G.neighbors(cur))) > 0:
-                if rand.random() >= self.return_prob:
-                    path.append(rand.choice(list(self.G.neighbors(cur))))
-                else:
-                    path.append(path[0])
-            else:
-                break
-        return [[node_id, int(node)] for node in path]
-
 
 def preprocess(pub_dict, assignment, case_name):  
     pub_id_list = extract_pub_id_list(pub_dict) # 获取paper_id
@@ -235,21 +153,7 @@ def preprocess(pub_dict, assignment, case_name):
             else:
                 edge_label[col_index][row_index] = 1
     
-    create_Path = Create_Path(case_name)
-
-    node_feature_list = [[]] * len(pub_dict)
-    walk = create_Path.generate_random_walks()
-    walk = np.array(walk).reshape(-1, 2)
-    index = list(zip(*walk))
-    node_feature_list = all_feature.squeeze()[tuple(index)]
-    node_feature_list = [node_feature_list.reshape(len(pub_dict), -1)]
-    # for pub_id in range(0, len(pub_dict)):
-        # node_feature = []
-        # for node_id in walk[pub_id]:
-            # node_feature.append(all_feature[pub_id][int(node_id)])
-        # node_feature_list[pub_id] = np.array(node_feature)
-    
-    return node_feature_list, adj_list, edge_label, all_feature
+    return adj_list, edge_label, all_feature
 
 def preprocess_all():
     for file_index, file_name in enumerate(path_utils.train_raw_data_list + path_utils.test_raw_data_list):

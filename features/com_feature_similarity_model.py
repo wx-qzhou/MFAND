@@ -101,7 +101,7 @@ class FeatureSimilarityModel:
         all_feature_sim = self.cal_idf_feature_sim(pub_1['authors'] + pub_1['affiliation'] + pub_1['title'] + \
             pub_1['keywords'] + pub_1['venue'], pub_2['authors'] + pub_2['affiliation'] + pub_2['title'] + \
             pub_2['keywords'] + pub_2['venue']) #+ self.cal_year_sim(pub_1['year'], pub_2['year'])
-        return [coauthor_sim, all_feature_sim]
+        return [coauthor_sim, affiliation_sim, title_sim, keywords_sim, venue_sim, all_feature_sim]
 
     def cal_idf_feature_sim(self, feature_1, feature_2):
         if feature_2 is None or feature_1 is None or len(feature_1) == 0 or len(feature_2) == 0:
